@@ -1,70 +1,65 @@
+// Experience shown as one card per company (newest first).
 export default function ExperienceTimeline({ items }) {
   return (
-    <ol className="relative">
-      {items.map((item, i) => {
-        const last = i === items.length - 1;
-        return (
-          <li key={item.company} className="relative flex gap-5 pb-4 last:pb-0">
-            {/* rail + dot */}
-            <div className="relative flex w-4 shrink-0 justify-center">
-              {!last && <span className="absolute top-5 bottom-[-4px] w-px bg-[#d7dce3]" aria-hidden="true" />}
-              <span
-                className={`relative mt-1.5 h-3.5 w-3.5 rounded-full ${
-                  item.current ? 'bg-[#2F80ED] ring-4 ring-[#2F80ED]/15' : 'bg-[#cfd6e0]'
-                }`}
-                aria-hidden="true"
-              />
+    <ol className="grid gap-5 lg:grid-cols-2">
+      {items.map((item) => (
+        <li
+          key={item.company}
+          className={`flex h-full flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${
+            item.current ? 'border-[#e3edf9] bg-[#f8fbff]' : 'border-[#ecebf5] bg-[#fbfaff]'
+          }`}
+        >
+          <div className="flex items-start gap-3.5">
+            {item.logo && (
+              <a href={item.url} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true" className="shrink-0">
+                <img
+                  src={item.logo}
+                  alt=""
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                  className="h-12 w-12 rounded-xl border border-line bg-white object-cover"
+                />
+              </a>
+            )}
+            <div className="min-w-0">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-bold leading-snug text-ink underline-offset-4 hover:underline"
+              >
+                {item.company}
+                <span className="sr-only"> (opens company website in a new tab)</span>
+              </a>
+              <p className="text-[15px] text-muted">{item.role}</p>
             </div>
+          </div>
 
-            <div
-              className={`flex flex-1 flex-col gap-2 pb-4 sm:flex-row sm:items-start sm:justify-between ${
-                last ? '' : 'border-b border-line'
-              }`}
-            >
-              <div className="flex gap-3.5">
-                {item.logo && (
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true" className="shrink-0">
-                    <img
-                      src={item.logo}
-                      alt=""
-                      width="44"
-                      height="44"
-                      loading="lazy"
-                      className="h-11 w-11 rounded-xl border border-line object-cover"
-                    />
-                  </a>
-                )}
-                <div>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-bold text-ink underline-offset-4 hover:underline"
-                >
-                  {item.company}
-                  <span className="sr-only"> (opens company website in a new tab)</span>
-                </a>
-                <p className="text-[15px] text-muted">{item.role}</p>
-                {item.highlights?.length > 0 && (
-                  <ul className="mt-2.5 space-y-1.5">
-                    {item.highlights.map((point) => (
-                      <li key={point} className="flex gap-2.5 text-sm leading-relaxed text-muted">
-                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[#94a3b8]" aria-hidden="true" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                </div>
-              </div>
-              <span className="self-start whitespace-nowrap rounded-full bg-chip px-3.5 py-1 text-sm font-medium text-ink">
-                {item.current && <span className="sr-only">Current role: </span>}
-                {item.duration}
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="rounded-full border border-line bg-white px-3 py-1 text-[13px] font-medium text-ink">
+              {item.duration}
+            </span>
+            {item.current && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-mint px-3 py-1 text-[13px] font-medium text-[#166534]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e]" aria-hidden="true" />
+                Current
               </span>
-            </div>
-          </li>
-        );
-      })}
+            )}
+          </div>
+
+          {item.highlights?.length > 0 && (
+            <ul className="mt-4 space-y-2 border-t border-[#e8edf3] pt-4">
+              {item.highlights.map((point) => (
+                <li key={point} className="flex gap-2.5 text-sm leading-relaxed text-muted">
+                  <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[#94a3b8]" aria-hidden="true" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
     </ol>
   );
 }

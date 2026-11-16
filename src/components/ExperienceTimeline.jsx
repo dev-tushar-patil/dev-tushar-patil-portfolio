@@ -32,6 +32,16 @@ export default function ExperienceTimeline({ items }) {
                   <span className="sr-only"> (opens company website in a new tab)</span>
                 </a>
                 <p className="text-[15px] text-muted">{item.role}</p>
+                {item.highlights?.length > 0 && (
+                  <ul className="mt-2.5 space-y-1.5">
+                    {item.highlights.map((point) => (
+                      <li key={point} className="flex gap-2.5 text-sm leading-relaxed text-muted">
+                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-[#94a3b8]" aria-hidden="true" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <span className="self-start whitespace-nowrap rounded-full bg-chip px-3.5 py-1 text-sm font-medium text-ink">
                 {item.current && <span className="sr-only">Current role: </span>}

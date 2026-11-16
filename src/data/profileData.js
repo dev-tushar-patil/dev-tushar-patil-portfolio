@@ -1,4 +1,4 @@
-import { CodeXml, Layers, CircleCheck, Rocket } from 'lucide-react';
+import { CodeXml, Layers, CircleCheck, Users, GraduationCap, Award } from 'lucide-react';
 import { GitHubIcon, LeetCodeIcon, GfgIcon, LinkedInIcon, MediumIcon } from '../components/BrandIcons';
 
 export const profile = {
@@ -34,7 +34,24 @@ export const achievements = [
   { value: '3+ Years', label: 'Experience', icon: CodeXml, tone: 'bg-sky border-[#dcebfb]' },
   { value: '10+', label: 'Projects', icon: Layers, tone: 'bg-peach border-[#fbe7cf]' },
   { value: '200+', label: 'Problems Solved', icon: CircleCheck, tone: 'bg-mint border-[#d3f3df]' },
-  { value: 'Full Stack', label: 'Development', icon: Rocket, tone: 'bg-lavender border-[#e6e1fb]' },
+  { value: '8.6K', label: 'LinkedIn Followers', icon: Users, tone: 'bg-lavender border-[#e6e1fb]' },
+];
+
+export const education = [
+  {
+    type: 'Degree',
+    title: 'Bachelor of Science (BSc)',
+    institution: 'Pune University',
+    icon: GraduationCap,
+    tone: 'bg-sky',
+  },
+  {
+    type: 'Certification',
+    title: 'Full Stack Java Developer Certification',
+    institution: 'SpeedUp Infotech, Pune',
+    icon: Award,
+    tone: 'bg-peach',
+  },
 ];
 
 export const developerProfiles = [

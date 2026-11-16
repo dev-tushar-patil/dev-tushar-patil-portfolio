@@ -13,6 +13,7 @@ const SECTION_TO_NAV = [
   ['projects', 'projects'],
   ['personal-projects', 'projects'],
   ['skills', 'skills'],
+  ['education', 'skills'],
   ['contact', 'contact'],
 ];
 

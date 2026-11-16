@@ -10,6 +10,7 @@ import ContactDetails from './sections/ContactDetails';
 import CompanyProjects from './sections/CompanyProjects';
 import PersonalProjects from './sections/PersonalProjects';
 import Skills from './sections/Skills';
+import Education from './sections/Education';
 import Contact from './sections/Contact';
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <CompanyProjects />
         <PersonalProjects />
         <Skills />
+        <Education />
         <Contact />
       </main>
       <Footer />

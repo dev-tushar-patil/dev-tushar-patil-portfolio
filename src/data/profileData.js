@@ -1,4 +1,6 @@
-import { CodeXml, Layers, CircleCheck, Users, GraduationCap, Award } from 'lucide-react';
+import { CodeXml, Layers, CircleCheck, Users } from 'lucide-react';
+import sppuLogo from '../assets/logos/sppu.jpg';
+import speedupLogo from '../assets/logos/speedup-infotech.jpg';
 import { GitHubIcon, LeetCodeIcon, GfgIcon, LinkedInIcon, MediumIcon } from '../components/BrandIcons';
 
 export const profile = {
@@ -41,16 +43,16 @@ export const education = [
   {
     type: 'Degree',
     title: 'Bachelor of Science (BSc)',
-    institution: 'Pune University',
-    icon: GraduationCap,
-    tone: 'bg-sky',
+    institution: 'Savitribai Phule Pune University',
+    logo: sppuLogo,
+    logoClass: 'rounded-full',
   },
   {
     type: 'Certification',
     title: 'Full Stack Java Developer Certification',
     institution: 'SpeedUp Infotech, Pune',
-    icon: Award,
-    tone: 'bg-peach',
+    logo: speedupLogo,
+    logoClass: 'rounded-2xl',
   },
 ];
 

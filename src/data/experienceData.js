@@ -1,9 +1,13 @@
+import acmeLogo from '../assets/logos/acme-infovision.jpg';
+import apmosysLogo from '../assets/logos/apmosys.jpg';
+
 export const experiences = [
   {
     company: 'ACME Infovision Systems Pvt. Ltd.',
     role: 'Java Full Stack Developer',
     duration: 'Feb 2024 – Present',
     url: 'https://acmeinfovision.com/',
+    logo: acmeLogo,
     current: true,
     highlights: [
       'Develop and maintain enterprise applications using Java and Spring Boot.',
@@ -17,6 +21,7 @@ export const experiences = [
     role: 'Software Developer',
     duration: 'Jun 2023 – Dec 2023',
     url: 'https://apmosys.com/',
+    logo: apmosysLogo,
     current: false,
     highlights: [
       'Worked as a backend developer on an insurance domain project.',

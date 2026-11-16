@@ -4,7 +4,7 @@ import { SquareArrowOutUpRight, Infinity as InfinityIcon } from 'lucide-react';
  * Reusable card for company and personal projects.
  * If `url` is set, the whole card becomes a link that opens in a new tab.
  */
-export default function ProjectCard({ title, subtitle, description, tags = [], image, url, badge }) {
+export default function ProjectCard({ title, subtitle, description, tags = [], image, url, badge, badgeLogo }) {
   const isLink = Boolean(url);
   const Wrapper = isLink ? 'a' : 'article';
   const linkProps = isLink
@@ -27,8 +27,12 @@ export default function ProjectCard({ title, subtitle, description, tags = [], i
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
         {badge && (
-          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-md bg-white/90 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-ink backdrop-blur">
-            <InfinityIcon className="h-3 w-3" aria-hidden="true" />
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-md bg-white/90 py-0.5 pl-0.5 pr-2 text-[10px] font-semibold uppercase tracking-wide text-ink backdrop-blur">
+            {badgeLogo ? (
+              <img src={badgeLogo} alt="" width="18" height="18" className="h-[18px] w-[18px] rounded-[4px] object-cover" />
+            ) : (
+              <InfinityIcon className="h-3 w-3" aria-hidden="true" />
+            )}
             {badge}
           </span>
         )}

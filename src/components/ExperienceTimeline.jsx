@@ -21,7 +21,20 @@ export default function ExperienceTimeline({ items }) {
                 last ? '' : 'border-b border-line'
               }`}
             >
-              <div>
+              <div className="flex gap-3.5">
+                {item.logo && (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true" className="shrink-0">
+                    <img
+                      src={item.logo}
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      className="h-11 w-11 rounded-xl border border-line object-cover"
+                    />
+                  </a>
+                )}
+                <div>
                 <a
                   href={item.url}
                   target="_blank"
@@ -42,6 +55,7 @@ export default function ExperienceTimeline({ items }) {
                     ))}
                   </ul>
                 )}
+                </div>
               </div>
               <span className="self-start whitespace-nowrap rounded-full bg-chip px-3.5 py-1 text-sm font-medium text-ink">
                 {item.current && <span className="sr-only">Current role: </span>}

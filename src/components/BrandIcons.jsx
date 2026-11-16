@@ -1,3 +1,5 @@
+import gfgLogo from '../assets/logos/geeksforgeeks.jpg';
+
 // Brand marks drawn inline (Lucide no longer ships brand logos).
 const base = (props) => ({
   viewBox: '0 0 24 24',
@@ -32,13 +34,19 @@ export function LeetCodeIcon(props) {
   );
 }
 
+// Official GeeksforGeeks logo tile (raster, so it ignores text colour).
 export function GfgIcon(props) {
+  const size = props.size ?? 24;
   return (
-    <svg {...base(props)} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-      <path d="M10.6 8.6A4.6 4.6 0 1 0 12 12" />
-      <path d="M13.4 8.6A4.6 4.6 0 1 1 12 12" />
-      <path d="M7.6 12h8.8" />
-    </svg>
+    <img
+      src={gfgLogo}
+      alt=""
+      aria-hidden="true"
+      width={size}
+      height={size}
+      className={`rounded-md object-cover ${props.className ?? ''}`}
+      style={{ width: size, height: size }}
+    />
   );
 }
 

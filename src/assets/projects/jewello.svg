@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<rect width="800" height="300" fill="#F4F6F9"/>
+<ellipse cx="400" cy="282" rx="230" ry="8" fill="#000" opacity="0.06"/>
+
+<rect x="300" y="26" width="118" height="236" rx="22" fill="#14161b" />
+<rect x="306" y="32" width="106" height="224" rx="17" fill="#1e1b4b" />
+<rect x="338" y="38" width="42" height="9" rx="5" fill="#14161b" />
+<path d="M359 120 l-20 -18 h40 z M339 102 l8 -10 h24 l8 10 z" fill="none" stroke="#f5c451" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="359" y="150" text-anchor="middle" font-family="Inter,Arial" font-size="12" font-weight="700" fill="#f5c451" letter-spacing="2">JEWELLO</text>
+<rect x="322" y="166" width="74" height="4" rx="2" fill="#6366f1" /><rect x="322" y="176" width="58" height="4" rx="2" fill="#6366f1" />
+<rect x="322" y="196" width="74" height="18" rx="9" fill="#f5c451" />
+<circle cx="510" cy="150" r="78" fill="#fff"/>
+<path d="M455 112 q55 110 110 0" fill="none" stroke="#e7b53c" stroke-width="11" stroke-linecap="round"/>
+<path d="M462 120 q48 92 96 0" fill="none" stroke="#f8d77a" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+<circle cx="510" cy="186" r="10" fill="#e7b53c"/>
+</svg>
